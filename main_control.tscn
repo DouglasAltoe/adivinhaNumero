@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bu2ux55w6y0mc"]
+
+[ext_resource type="Script" uid="uid://cluyh15k6gtim" path="res://control.gd" id="1_mrtml"]
+
+[node name="Control" type="Control" unique_id=701231248]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mrtml")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=734862759]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="title" type="Label" parent="VBoxContainer" unique_id=831364913]
+layout_mode = 2
+text = "Adivinha o Número"
+horizontal_alignment = 1
+
+[node name="subtitle" type="Label" parent="VBoxContainer" unique_id=1508100860]
+layout_mode = 2
+text = "Pense em um número entre 0 e 1000."
+horizontal_alignment = 1
+
+[node name="message" type="Label" parent="VBoxContainer" unique_id=583257360]
+layout_mode = 2
+text = "..."
+horizontal_alignment = 1
+
+[node name="button_higher" type="Button" parent="VBoxContainer" unique_id=1195213626]
+layout_mode = 2
+text = "Maior"
+
+[node name="button_lower" type="Button" parent="VBoxContainer" unique_id=1822100498]
+layout_mode = 2
+text = "Menor"
+
+[node name="button_correct" type="Button" parent="VBoxContainer" unique_id=1204884360]
+layout_mode = 2
+text = "Sim, correto!"
+
+[connection signal="pressed" from="VBoxContainer/button_higher" to="." method="_on_button_higher_pressed"]
+[connection signal="pressed" from="VBoxContainer/button_lower" to="." method="_on_button_lower_pressed"]
+[connection signal="pressed" from="VBoxContainer/button_correct" to="." method="_on_button_correct_pressed"]
